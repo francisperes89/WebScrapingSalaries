@@ -4,16 +4,14 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import ElementClickInterceptedException
 
 
 def scrape_payscale_data(url):
     all_data = []
     # Set up Chrome WebDriver
     chrome_options = Options()
-    # chrome_options.add_argument("--headless")
-    chrome_options.add_experimental_option("detach", True)
-    #service = ChromeService("path/to/chromedriver")
+    chrome_options.add_argument("--headless")
+    # chrome_options.add_experimental_option("detach", True)
     driver = webdriver.Chrome(options=chrome_options)
 
     try:
